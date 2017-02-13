@@ -83,4 +83,4 @@ out <- regSearch1(topic='fisheries', agency='national-oceanic-and-atmospheric-ad
 
 #write output
 setwd('set this') #would be nice to automatically write to the containing directory
-write.csv(out, 'fedRegOut.csv', row.names=FALSE)
+write.csv(out, 'fedRegOut.csv', row.names=FALSE) #write.csv() automatically writes to whatever directory is open... so not sure we need the setwd
