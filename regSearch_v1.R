@@ -12,7 +12,9 @@ library(httr)
 library(jsonlite)
 library(stringr)
 
-#regEngine is not used directly. it's called by regSearch1
+#regEngine is not used directly,
+#it is called by regSearch1 in order include user-specified search terms and order
+#in the correct URL sequence
 regEngine1 <- function(topic=NULL, agency=NULL, start=NULL, end=NULL, doc_type='ALL', PAGE){
 
     #this base url includes the API expressions for number of items per page, sort by oldest,
@@ -55,7 +57,7 @@ regEngine1 <- function(topic=NULL, agency=NULL, start=NULL, end=NULL, doc_type='
     return(out)
 }
 
-#main function for searching federal register
+#main function for searching federal register that uses regEngine1 specified above
 regSearch1 <- function(topic=NULL, agency=NULL, start=NULL, end=NULL, doc_type='ALL'){
 
     #return the first page of results (the API can return max=1000 per page)
